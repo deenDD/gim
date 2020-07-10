@@ -1,0 +1,293 @@
+
+
+
+
+
+
+body{
+
+
+}
+.bg-img{
+  background-image: url(ft-bg.jpg);
+  width: 100%;
+  height:30rem;
+  background-size: cover;
+  background-position: center;
+}
+.infometion{
+  padding: 10px 10px;
+  background-color: #d2d2d2;
+}
+.table{
+
+}
+.table tr{
+  border: 2px solid red;
+ 
+  
+}
+.table th{
+ background-color:red;
+ color: white;
+ font-weight: lighter;
+ width: 30%;
+}
+.table tr{
+ background-color: white;
+}
+/* 画像サイズ調整のための仕掛け */
+.size-adjust img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: none;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+.main-thumbnail img {
+  position: relative;
+  width: 200px; /* 画像の幅 */
+  height: 200px; /* 画像の高さ */
+  display: inline-block;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #d2d2d2;
+  overflow: hidden;
+}
+
+.main-thumbnail-w100 img {
+  position: relative;
+  width: 100%; /* 画像の幅 */
+  height: 50%; /* 画像の高さ */
+  display: inline-block;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #d2d2d2;
+  overflow: hidden;
+}
+
+.main-thumbnail-w50{
+  position: relative;
+  width: 100%; /* 画像の幅 */
+  height: auto; /* 画像の高さ */
+  display: inline-block;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: #d2d2d2;
+  overflow: hidden; 
+}
+
+.pictuers {
+  background-color:#d2d2d2;
+}
+
+.gesutInfo {
+  text-align: center;
+  background-color: white;
+}
+
+.h3{
+  display: inline-block;
+  background-color: #000;
+  color:white;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  width: 20rem;
+  font-size: 200%;
+}
+.h5{
+  display: inline-block;
+  background-color: #000;
+  color:white;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  width: 10rem;
+  font-size: 100%;
+}
+.aFontColor{
+  color: white;
+}
+/* 自動スライドをCSSでやる */
+.loop_wrap {
+  display: flex;
+  width: 100vw;
+  height: 300px;
+  overflow: hidden;
+  background-color :red; 
+  opacity:0.5; 
+}
+
+.loop_wrap img {
+  width: auto;
+  height: 100%;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+.loop_wrap img:first-child {
+  animation: loop 50s -25s linear infinite;
+}
+
+.loop_wrap img:last-child {
+  animation: loop2 50s linear infinite;
+}
+
+/* 複数枚の画像で自動スライドをCSSで実現 */
+.loop_wrap:hover ul {
+  animation-play-state: paused;
+}
+
+/* スライド画像に薄い黒のマスキングをかける */
+.content{
+  width: 100%;
+  height: 15rem;
+  background: #000;
+
+  position: relative;
+}
+
+.bg{
+  /*位置の設定*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /*背景画像の設定*/
+  /* background: url(https://dl.dropbox.com/s/28e21uby8b3eibo/sample.jpg?dl=0);
+  background-size: cover; */
+
+  /*透過の設定*/
+  opacity: 0.5;
+}
+.p{
+  width: 100%; /*absoluteで位置を設定するときに、幅と高さは必ず必要*/
+  height: 1.5em;
+  color: #fff;
+  text-align: center;
+
+  /*位置の設定　- 上下中央寄せ*/
+  position: absolute;
+  margin: auto;
+  top: -30%;
+  bottom: 0;
+}
+.nav{
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  /* スマホ用のスタイル */
+
+      /*　画面サイズが500pxからはここを読み込む　*/
+   .nav{
+    display: none;
+  }
+}
+
+/* スクロールすると画面に下からふわっと現れる
+js */
+
+.js-animation {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+  transition: all 1s;
+}
+.js-animation.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+/* モラールのナビの設置 */
+.menu-container {
+  margin: 0;
+}
+
+.menu-container .menu {
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container .menu .menu-item {
+  flex: 1;
+}
+
+.menu-container .menu .menu-item a {
+  background: #fff;
+  border-right: 1px solid #ccc;
+  color: #333;
+  display: block;
+  padding: 0.6em 0.4em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu-container .menu .menu-item a:hover {
+  background: #ccc;
+  color: #ffffff;
+}
+
+.menu-container .menu .menu-item:last-child a {
+  border-right: none;
+}
+
+#modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  height: 120%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-container .menu {
+    -webkit-transform: translate(-50%, -50%);
+    background: #fff;
+    display: none;
+    height: auto;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 100;
+  }
+  .menu-container .menu .menu-item a {
+    border-bottom: 1px solid #ccc;
+    border-right: none;
+  }
+  .menu-container .menu .menu-item:last-child a {
+    border-bottom: none;
+  }
+}
+
